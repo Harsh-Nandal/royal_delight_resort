@@ -997,10 +997,15 @@ footer::before {
 <script>
 // ── PRELOADER
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('preloader').classList.add('hidden');
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('hidden');
+      initHero();
+    }, 2200);
+  } else {
     initHero();
-  }, 2200);
+  }
 });
 
 // ── HERO ANIMATIONS
